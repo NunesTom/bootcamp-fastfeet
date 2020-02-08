@@ -1,5 +1,6 @@
-const express = require('express'); // yarn add expres
-const routes = require('./routes');
+import express  from 'express'; // yarn add expres
+// const routes = require('./routes'); alterado com o sucrase para utilizar sintaxe de import
+import routes from './routes';
 
 /* Class do app */ 
 class App {
@@ -19,4 +20,4 @@ class App {
   }
 }
 
-module.exports = new App().server;
+export default new App().server;
