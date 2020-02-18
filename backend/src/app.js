@@ -1,8 +1,13 @@
-import express  from 'express'; // yarn add expres
+// yarn add express
+import express from 'express';
+
 // const routes = require('./routes'); alterado com o sucrase para utilizar sintaxe de import
 import routes from './routes';
 
-/* Class do app */ 
+// Importar o database para inicializar com a API
+import './database';
+
+/* Class do app */
 class App {
   constructor() {
     this.server = express();
@@ -11,7 +16,8 @@ class App {
     this.routes();
   }
 
-  middlewares() { // utilizado na interceptação de requisições
+  middlewares() {
+    // utilizado na interceptação de requisições
     this.server.use(express.json());
   }
 
